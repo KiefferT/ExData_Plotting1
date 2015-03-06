@@ -7,7 +7,7 @@ plot2 <- function() {
 
     ## Get Date and Time into POSIXct
     transform(data, fulldate = paste(Date, Time, sep = " "))
-    data$fulldate <- as.POSIXct(as.character(col$fulldate))
+    data$fulldate <- as.POSIXct(as.character(data$fulldate))
     
     ## Create device    
     png(file = "plot2.png", width = 480, height = 480)
