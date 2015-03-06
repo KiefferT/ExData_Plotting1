@@ -6,8 +6,10 @@ plot2 <- function() {
     colnames(data) <- c("Date", "Time", "Global_active_power", "Global_reactive_power", "Voltage", "Global_intensity", "Sub_metering_1", "Sub_metering_2", "Sub_metering_3")
 
     ## Get Date and Time into POSIXct
-    transform(data, fulldate = paste(Date, Time, sep = " "))
+    data$Date <- as.Date(data$Date, "%d/%m/%Y")
+    data <- transform(data, fulldate = paste(Date, Time, sep = " "))
     data$fulldate <- as.POSIXct(as.character(data$fulldate))
+    
     
     ## Create device    
     png(file = "plot2.png", width = 480, height = 480)
