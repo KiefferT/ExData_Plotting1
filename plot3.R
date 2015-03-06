@@ -17,9 +17,9 @@ plot3 <- function() {
     ## Create plot
     plot(data$fulldate, data$Sub_metering_1, type = "l", xlab = "", ylab = "Energy sub metering")
     par(new = T)
-    plot(data$fulldate, data$Sub_metering_2, type = "l", col = "red", xlab = "", ylab = "", ylim = c(0, 40), yaxt = "n")
+    plot(data$fulldate, data$Sub_metering_2, type = "l", col = "red", xlab = "", ylab = "", ylim = c(0, 40), yaxt = "n", xaxt = "n")
     par(new = T)
-    plot(data$fulldate, data$Sub_metering_3, type = "l", col = "blue", xlab = "", ylab = "", ylim = c(0, 40), yaxt = "n")
+    plot(data$fulldate, data$Sub_metering_3, type = "l", col = "blue", xlab = "", ylab = "", ylim = c(0, 40), yaxt = "n", xaxt = "n")
     
     ## Add legend
     legend("topright", lty=c(1,1,1), col = c("black", "red", "blue"), c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
